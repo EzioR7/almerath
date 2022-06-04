@@ -1,10 +1,32 @@
+html { 
+  background: url(../images/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  scroll-behavior: smooth;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Tajawal', sans-serif;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
+}
+/* Glassmorphism Effect */
+.glass-bg {
+  background: rgba( 4, 2, 0, 0.55 );
+  box-shadow: 0 8px 32px 0 rgba( 	255, 215, 6, 0.12 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 	255, 215, 6, 0.18 );
 }
