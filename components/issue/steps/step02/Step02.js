@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useUpdateIssue, useIssue } from 'context/Issue'
 import { useNextStep } from 'context/Steps'
 import { Grid, FormLabel } from '@mui/material'
-import { SonsSelect } from './index'
+import { SonsSelect, DaughtersSelect } from './index'
 
 function Step02() {
 
@@ -26,6 +26,10 @@ function Step02() {
     setSons(val)
   }
 
+  const daughtersChange = (val) => {
+    setDaughters(val)
+  }
+
 
   return (
     <>
@@ -33,6 +37,9 @@ function Step02() {
       <Grid container rowSpacing={3} columnSpacing={3}>
         <Grid md={2} sm={3} xs={10} item>
           <SonsSelect sons={sons} grandsons={grandsons} grandGrandsons={grandGrandsons} granddaughters={granddaughters} sonsChange={sonsChange} />
+        </Grid>
+        <Grid md={2} sm={3} xs={10} item>
+          <DaughtersSelect daughters={daughters} daughtersChange={daughtersChange} />
         </Grid>
       </Grid>
     </>
