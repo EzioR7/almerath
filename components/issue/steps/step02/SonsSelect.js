@@ -1,67 +1,14 @@
-import { useState } from 'react'
-import { useUpdateIssue, useIssue } from 'context/Issue'
+/* Sons Select */
 import { TextField } from '@mui/material'
 
-function SonsSelect() {
+function SonsSelect({ sons, grandsons, grandGrandsons, granddaughters, sonsChange }) {
 
-   // Using the custom Hook to update the Issue general state
-   const updateIssue = useUpdateIssue()
-   const issueData = useIssue()
-
-   const [sons, setSons] = useState(0)
-
-   const isDisabled = () => {
-
-    let disabled = false
-
-    // Set up when sons select should be disabled
-    issueData.inherits.league.find((item) => {
-      return item.title == 'أبناء الأبناء' || item.title == 'أبناء أبناء الأبناء' || item.title == 'بنات الأبناء' 
-    }) == undefined ? disabled = false : disabled = true
-
-    issueData.inherits.fard.find((item) => {
-      return item.title == 'بنات الأبناء'
-    }) == undefined ? disabled = false : disabled = true
-  
-    return disabled
-
-   }
-   
-   const sonsChange = (e) => {
+   const handleChange = (e) => {
 
     // Check if sons Input is not empty
     let sonsInput = e.target.value
-    sonsInput > 0 && sonsInput != (undefined || "") ? setSons(sonsInput) : null
+    sonsInput >= 0 && (sonsInput != (undefined || "")) ? sonsChange(sonsInput) : null
 
-    // Check if the user delete sonsSelect
-    if (sonsInput == "") {
-      const data = {
-        inherits: {
-          league: issueData.inherits.league.filter((inherit) => {
-            return inherit.title != 'الأبناء'
-          })
-        },
-        hasChild: false
-      }
-    }
-    
-    // Check if sons is greater then 0 so add the inherits
-    if (sons > 0) {
-      const data = {
-        inherits: {
-          league: [
-            {
-              title: 'الأبناء',
-              count: sons
-            }
-          ]
-        },
-        hasChild: true
-      }
-
-      updateIssue(data)
-    }
-    
    }
 
   return (
@@ -70,9 +17,9 @@ function SonsSelect() {
       label="الأبناء" 
       variant="filled" 
       type="number"
-      disabled={isDisabled()}  
-      onChange={sonsChange}
-      InputProps={{ inputProps: { min: 0, max: 20 } }}
+      disabled={grandsons > 0 || grandGrandsons > 0 || granddaughters > 0 ? true : false}  
+      onChange={handleChange}
+      InputProps={{ inputProps: { max: 20 } }}
       fullWidth
     />
   )
