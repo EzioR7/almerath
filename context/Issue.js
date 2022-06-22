@@ -25,7 +25,10 @@ export function IssueProvider({ children }) {
     gender: '',
     amount: 0,
     creed: '',
-    inherits: [],
+    inherits: {
+      fard: [],
+      league: []
+    },
   })
 
   function updateIssue(obj) {
