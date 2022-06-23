@@ -7,7 +7,7 @@ function DaughtersSelect({ daughters, daughtersChange }) {
 
     // Check if sons Input is not empty
     let daughtersInput = e.target.value
-    daughtersInput >= 0 && (daughtersInput != (undefined || "")) ? daughtersChange(sonsInput) : null
+    daughtersInput >= 0 && (daughtersInput != (undefined || "")) ? daughtersChange(daughtersInput) : null
 
    }
 
