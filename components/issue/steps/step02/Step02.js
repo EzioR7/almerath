@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useUpdateIssue, useIssue } from 'context/Issue'
 import { useNextStep } from 'context/Steps'
 import { Grid, FormLabel } from '@mui/material'
-import { SonsSelect, DaughtersSelect, GrandsonsSelect, GranddaughtersSelect } from './index'
+import { SonsSelect, DaughtersSelect, GrandsonsSelect, GranddaughtersSelect, GrandGrandsonsSelect } from './index'
 
 function Step02() {
 
@@ -38,15 +38,19 @@ function Step02() {
     setGranddaughters(val)
   }
 
+  const grandGrandsonsChange = (val) => {
+    setGrandGrandsons(val)
+  }
+
 
   return (
     <>
       <FormLabel sx={{py: '1.5rem'}}>الفروع</FormLabel>
       <Grid container rowSpacing={3} columnSpacing={3}>
-        <Grid md={2} sm={3} xs={10} item>
+        <Grid md={3} sm={4} xs={10} item>
           <SonsSelect sons={sons} grandsons={grandsons} grandGrandsons={grandGrandsons} granddaughters={granddaughters} sonsChange={sonsChange} />
         </Grid>
-        <Grid md={2} sm={3} xs={10} item>
+        <Grid md={3} sm={4} xs={10} item>
           <DaughtersSelect daughters={daughters} daughtersChange={daughtersChange} />
         </Grid>
       </Grid>
@@ -55,7 +59,12 @@ function Step02() {
           <GrandsonsSelect grandsons={grandsons} sons={sons} grandGrandsons={grandGrandsons} grandsonsChange={grandsonsChange} />
         </Grid>
         <Grid md={3} sm={4} xs={10} item>
-          <GranddaughtersSelect  granddaughters={granddaughters} sons={sons} daughters={daughters} granddaughtersChange={granddaughtersChange} />
+          <GranddaughtersSelect  granddaughters={granddaughters} sons={sons} daughters={daughters} grandsons={grandsons} granddaughtersChange={granddaughtersChange} />
+        </Grid>
+      </Grid>
+      <Grid container mt={4} rowSpacing={3} columnSpacing={3}>
+        <Grid item md={3} sm={4} xs={10}>
+          <GrandGrandsonsSelect grandGrandsons={grandGrandsons} sons={sons} grandsons={grandsons} grandGrandsonsChange={grandGrandsonsChange} />
         </Grid>
       </Grid>
     </>
