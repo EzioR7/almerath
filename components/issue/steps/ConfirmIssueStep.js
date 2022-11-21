@@ -1,5 +1,5 @@
 import { useUpdateIssue, useIssue } from "context/Issue";
-import NextStepButton from "../NextStepButton";
+import NextStepButton from "../steps_buttons/NextStepButton";
 import { useNextStep } from "context/Steps";
 import { Typography } from "@mui/material";
 

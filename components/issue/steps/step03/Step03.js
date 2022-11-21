@@ -18,7 +18,7 @@ import {
   HusbandSelect,
   WifesSelect,
 } from "./index";
-import NextStepButton from "../../NextStepButton";
+import NextStepButton from "../../steps_buttons/NextStepButton";
 
 function Step03() {
   // Using the custom Hook to update the Issue general state

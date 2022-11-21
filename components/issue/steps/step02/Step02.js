@@ -18,7 +18,7 @@ import {
   twoAndMoreFemale,
   femaleWithOneGreaterFemale,
 } from "./HelperFunctions";
-import NextStepButton from "../../NextStepButton";
+import NextStepButton from "../../steps_buttons/NextStepButton";
 
 function Step02() {
   // Using the custom Hook to update the Issue general state

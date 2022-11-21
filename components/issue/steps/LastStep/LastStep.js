@@ -13,7 +13,7 @@ import {
   ShowChart,
   MonetizationOn,
 } from "@mui/icons-material";
-import ResetStepsButton from "../../ResetStepsButton";
+import ResetStepsButton from "../../steps_buttons/ResetStepsButton";
 
 function LastStep() {
   // Using the custom Hook to update the Issue general state
