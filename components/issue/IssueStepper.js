@@ -1,5 +1,5 @@
 import { Stepper, Typography, Step, StepLabel, StepContent, } from '@mui/material'
-import { Step01, Step02 } from 'components/issue/steps/index'
+import { Step01, Step02, Step03, ConfirmIssueStep, LastStep } from 'components/issue/steps/index'
 import { useStep } from 'context/Steps'
 
 function IssueStepper() {
@@ -16,6 +16,21 @@ function IssueStepper() {
       title: 'إختيار الأولاد',
       content: <Step02 />
     },
+    ,
+    {
+      title: 'إختيار الآباء',
+      content: <Step03 />
+    },
+    {
+      title: 'تأكيد حل المسألة',
+      content: <ConfirmIssueStep />
+    },
+    {
+      title: 'حل المسألة',
+      content: <LastStep />
+    }
+
+
   ]
 
   return (
