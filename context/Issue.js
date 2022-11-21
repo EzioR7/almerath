@@ -1,43 +1,44 @@
 // Issue Context
-import React, { useContext, useState } from "react"
+import React, { useContext, useState } from "react";
 
 // To get Issue Data
-const Issue = React.createContext()
+const Issue = React.createContext();
 
 // To Update Issue Data
-const UpdateIssue = React.createContext()
-
+const UpdateIssue = React.createContext();
 
 // Custom Hooks To Access The Two Context Globally in the App
 export function useIssue() {
-  return useContext(Issue)
-} 
-
-export function useUpdateIssue() {
-  return useContext(UpdateIssue)
+  return useContext(Issue);
 }
 
+export function useUpdateIssue() {
+  return useContext(UpdateIssue);
+}
 
 // Issue Provider
 export function IssueProvider({ children }) {
   // Issue Data
   const [data, setData] = useState({
-    gender: '',
+    gender: "",
     amount: 0,
-    creed: '',
-    inherits: {
-      fard: [],
-      league: []
-    },
-  })
+    creed: "",
+    issueType: "",
+    allStocks: 0,
+    fardInherits: [],
+    leagueInherits: [],
+    note: "",
+    hasSons: false,
+    hasChild: false,
+    hasPartner: false,
+  });
 
   function updateIssue(obj) {
     // For Update Issue Data
     setData((previousState) => {
-      return ({...previousState, ...obj})
-    })
+      return { ...previousState, ...obj };
+    });
   }
-
 
   return (
     <Issue.Provider value={data}>
@@ -45,5 +46,5 @@ export function IssueProvider({ children }) {
         {children}
       </UpdateIssue.Provider>
     </Issue.Provider>
-  )
+  );
 }

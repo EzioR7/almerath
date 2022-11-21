@@ -44,7 +44,7 @@ export function StepsProvider({ children }) {
 
   function lastStep() {
     // Go To Last Step
-    setStep(6)
+    setStep(3)
   }
 
   function resetSteps() {
