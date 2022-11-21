@@ -1,5 +1,5 @@
 import { Box, Button } from '@mui/material'
-import { NavigateNextTwoTone } from '@mui/icons-material'
+import { ArrowDownward } from '@mui/icons-material'
 
 function NextStepButton({ nextStep }) {
   return (
@@ -9,9 +9,9 @@ function NextStepButton({ nextStep }) {
           variant="outlined"
           onClick={nextStep}
           sx={{ mt: 6, mr: 1 }}
-          startIcon={<NavigateNextTwoTone />}
           size="large"
         >
+          <ArrowDownward />
           الخطوة التالية
         </Button>
       </div>
