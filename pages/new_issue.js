@@ -9,7 +9,7 @@ export default function new_issue() {
   return (
     <IssueProvider>
       <StepsProvider>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Head>
             <title>الميراث | حل مسألة جديدة</title>
           </Head>

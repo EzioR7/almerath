@@ -13,6 +13,9 @@ function Layout({ children }) {
         primary: {
           main: '#FFD706',
         },
+        secondary: {
+          main: '#ffface',
+        },
         mode: 'dark',
       },
       typography: {
@@ -27,6 +30,14 @@ function Layout({ children }) {
             }
           }
         },
+        MuiCard: {
+          styleOverrides: {
+            root: {
+              background: 'none',
+              boxShadow: '0 8px 32px 0 rgba( 	255, 215, 6, 0.12 )'
+            }
+          }
+        }
       },
     },
     arEG
