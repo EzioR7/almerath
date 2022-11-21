@@ -65,7 +65,7 @@ function Step01() {
       
       const data = {
         gender: gender.value,
-        amount: amount.value,
+        amount: parseFloat(amount.value),
         creed: creed.value
       }
       // Update The General State in the Context
