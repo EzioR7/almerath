@@ -1,7 +1,7 @@
 /* Granddaughters Select */
 import { TextField } from '@mui/material'
 
-function GranddaughtersSelect({ granddaughters, sons, daughters, grandsons, granddaughtersChange }) {
+function GranddaughtersSelect({ granddaughters, sons, daughters, grandsons, grandGrandsons, granddaughtersChange }) {
 
   const handleChange = (e) => {
 
@@ -18,8 +18,8 @@ function GranddaughtersSelect({ granddaughters, sons, daughters, grandsons, gran
       variant="filled" 
       type="number" 
       onChange={handleChange} 
-      helperText={sons > 0 ? 'بنات الإبن محجوبون لوجود الأبناء' : sons == 0 && daughters >= 2 && grandsons == 0  ? 'بنات الأبناء محجوبون لإستيفاء حظ الثلثين للإناث' : null}
-      disabled={sons > 0 || ((sons == 0 || sons == '') && daughters >= 2 && grandsons == 0) ? true : false} 
+      helperText={sons > 0 ? 'بنات الإبن محجوبون لوجود الأبناء' : sons == 0 && daughters >= 2 && grandsons == 0 && grandGrandsons == 0  ? 'بنات الأبناء محجوبون لإستيفاء حظ الثلثين للإناث' : null}
+      disabled={sons > 0 || ((sons == 0 || sons == '') && daughters >= 2 && (grandGrandsons == 0 && grandsons == 0)) ? true : false} 
       InputProps={{ inputProps: { max: 20 } }}
       fullWidth
     />

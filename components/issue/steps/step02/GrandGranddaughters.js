@@ -1,7 +1,7 @@
 /* GrandGranddaughters Select */
 import { TextField } from '@mui/material'
 
-function GrandGranddaughters({ grandGranddaughters, sons, granddaughters, grandsons, grandGranddaughtersChange }) {
+function GrandGranddaughters({ grandGranddaughters, sons, daughters, granddaughters, grandsons,grandGrandsons, grandGranddaughtersChange }) {
 
   const handleChange = (e) => {
 
