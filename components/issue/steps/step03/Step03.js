@@ -304,6 +304,10 @@ function Step03() {
 
     if (issueData.leagueInherits.length > 0) {
       // There are League So The Issue Ready to Solve
+      if (grandfather && issueData.creed == "الشافعي") {
+        updateIssue({ hasGrandfather: true });
+        goNextStep();
+      }
       goLastStep();
     } else {
       goNextStep();

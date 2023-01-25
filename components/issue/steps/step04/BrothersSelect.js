@@ -1,7 +1,12 @@
 /* Brothers Select */
 import { TextField } from "@mui/material";
 
-function BrothersSelect({ brothers, brothersChange }) {
+function BrothersSelect({
+  brothers,
+  brothersChange,
+  fatherSideBrothers,
+  fatherSideSisters,
+}) {
   const handleChange = (e) => {
     // Check if sons Input is not empty
     let brothersInput = e.target.value;
@@ -15,7 +20,7 @@ function BrothersSelect({ brothers, brothersChange }) {
       label="الإخوة الأشقاء"
       variant="filled"
       type="number"
-      //disabled={grandsons > 0 || grandGrandsons > 0 || granddaughters > 0 ? true : false}
+      disabled={fatherSideBrothers > 0 || fatherSideSisters > 0 ? true : false}
       onChange={handleChange}
       InputProps={{ inputProps: { max: 20 } }}
       fullWidth

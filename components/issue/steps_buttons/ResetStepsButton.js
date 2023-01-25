@@ -24,6 +24,7 @@ function ResetStepsButton() {
       hasSons: false,
       hasChild: false,
       hasPartner: false,
+      hasGrandfather: false,
     };
     // Reset Issue Context
     updateIssue(data);
