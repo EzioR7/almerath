@@ -31,6 +31,7 @@ export function IssueProvider({ children }) {
     hasSons: false,
     hasChild: false,
     hasPartner: false,
+    hasGrandfather: false,
   });
 
   function updateIssue(obj) {
